@@ -11,10 +11,10 @@ resource "tfe_oauth_client" "oauth" {
   service_provider = "github"
 }
 
-resource "tfe_workspace" "tfr" {
+resource "tfe_workspace" "tf-ws" {
   count             = var.workspace_count
   organization      = var.organization
-  name              = "tfr${count.index}"
+  name              = "tf-ws${count.index}"
   auto_apply        = true
   queue_all_runs    = true
   working_directory = var.working_directory
